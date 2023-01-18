@@ -17,7 +17,7 @@ class MatriculaDelgController extends Controller
         $periodo= Periodo::where('estado','=','1')->get();
         $busqueda=$request->get('buscarpor');
         //$matricula=MatriculaDelegacion::where('estado','=','1')->where('idmatriculadeleg','like','%'.$busqueda.'%')->paginate($this::PAGINATION);
-        $matricula = MatriculaDelegacion::join("Periodos","Matriculasdelegacion.idperiodo","=","Periodos.idperiodo")->where('Periodos.estado','=','1') ->get();
+        $matricula = MatriculaDelegacion::join("periodos","matriculasdelegacion.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1') ->get();
         return view('matriculadelg.index',compact('matricula','busqueda','periodo'));
     }
 
