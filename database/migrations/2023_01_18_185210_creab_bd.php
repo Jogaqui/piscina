@@ -44,6 +44,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->integer('montod');
             $table->tinyInteger('estado');
+            $table->integer('idperiodo');
         });
         Schema::create('dias', function (Blueprint $table) {
             $table->id('idia');
