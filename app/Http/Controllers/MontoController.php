@@ -13,7 +13,7 @@ class MontoController extends Controller
         $periodo= Periodo::where('estado','=','1')->get();
         $busqueda=$request->get('buscarpor');
         //$monto=Monto::where('estado','=','1')->where('descripcion','like','%'.$busqueda.'%')->paginate($this::PAGINATION);
-        $monto = Monto::join("periodos","Montos.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1') ->get();
+        $monto = Monto::join("periodos","montos.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1') ->get();
         return view('monto.index',compact('busqueda','periodo','monto'));
     }
 

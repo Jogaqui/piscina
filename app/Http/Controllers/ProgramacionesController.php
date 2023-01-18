@@ -20,7 +20,7 @@ class ProgramacionesController extends Controller
         $periodo= Periodo::where('estado','=','1')->get();
         //$buscar=$request->get('buscar');
         //$programaciones=Programaciones::where('estado','=','1')->where('idprogramacion','like','%'.$buscar.'%')->paginate($this::PAGINATION);
-        $programaciones = Programaciones::join("Periodos","Programaciones.idperiodo","=","Periodos.idperiodo")->where('Periodos.estado','=','1') ->get();
+        $programaciones = Programaciones::join("periodos","programaciones.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1') ->get();
         return view('programaciones.index',compact('periodo','programaciones'));
     }
 
