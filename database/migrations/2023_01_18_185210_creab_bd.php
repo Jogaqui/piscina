@@ -85,9 +85,11 @@ return new class extends Migration
         Schema::create('montos', function (Blueprint $table) {
             $table->id('idmonto');
             $table->string('descripcion');
+            $table->integer('montomes');
             $table->date('fechainicio');
             $table->date('fechafin');
             $table->string('tipo');
+            $table->integer('idperiodo');
             $table->tinyInteger('estado');
         });
         Schema::create('niveles', function (Blueprint $table) {
