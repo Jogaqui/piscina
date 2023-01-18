@@ -13,7 +13,7 @@ class DescuentoController extends Controller
       $periodo= Periodo::where('estado','=','1')->get();
       $buscarpor=$request->get('buscarpor');
       //$descuento = Descuento::where('estado','=','1')->where('descripcion','like','%'.$buscarpor.'%')->paginate($this::PAGINATION);   
-      $descuento = Descuento::join("Periodos","Descuentos.idperiodo","=","Periodos.idperiodo")->where('Periodos.estado','=','1')->get();
+      $descuento = Descuento::join("periodos","descuentos.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1')->get();
       return view('descuento.index',compact('buscarpor','periodo','descuento'));
     }
 

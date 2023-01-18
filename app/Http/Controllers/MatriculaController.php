@@ -23,7 +23,7 @@ class MatriculaController extends Controller
         $periodo= Periodo::where('estado','=','1')->get();
         $busqueda=$request->get('busqueda');
         //$matricula=matricula::where('estado','=','1')->where('idprogramacion','like','%'.$busqueda.'%')->paginate($this::PAGINATION);
-        $matricula = Matricula::join("Periodos","matriculas.idperiodo","=","Periodos.idperiodo")->where('Periodos.estado','=','1') ->get();
+        $matricula = Matricula::join("periodos","matriculas.idperiodo","=","periodos.idperiodo")->where('periodos.estado','=','1') ->get();
         return view('matricula.index',compact('busqueda','periodo','matricula'));
     }
     
