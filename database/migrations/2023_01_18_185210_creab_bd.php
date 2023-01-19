@@ -47,7 +47,7 @@ return new class extends Migration
             $table->integer('idperiodo');
         });
         Schema::create('dias', function (Blueprint $table) {
-            $table->id('idia');
+            $table->id('iddia');
             $table->string('descripcion');
             $table->tinyInteger('estado');
         });
@@ -127,8 +127,10 @@ return new class extends Migration
             $table->integer('idpiscina');
             $table->integer('idnivel');
             $table->integer('idhorario');
+            $table->integer('vacante');
             $table->integer('idpersonal');
             $table->tinyInteger('estado');
+            $table->integer('idperiodo');
         });
     }
 
